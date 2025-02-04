@@ -17,7 +17,7 @@ import csv
 #  Des instructions détaillées sont données plus bas
 
 
-
+fichier_a_lire = os.path.join("csvs","Ex6 Competences.csv")
 
 
 
@@ -44,8 +44,13 @@ import csv
 
 # INSTRUCTIONS DÉTAILLÉES
 #Ouvrez en lecture le fichier Ex6 Competences.csv
+with open(fichier_a_lire,"r",encoding="utf-8") as csv_file:
 #avec l'encodage et le delimiter requis
+    lecteur = csv.reader(csv_file,delimiter="/")
 #Imprimez la première ligne
+    print(next(lecteur))
 #Faites une boucle pour passer à travers chacune des lignes du fichier
+    for ligne in lecteur:
 #Si l'exigence est  'Exigé' imprimez cette ligne
-
+        if ligne[2] == "Exigé":
+            print(ligne)
