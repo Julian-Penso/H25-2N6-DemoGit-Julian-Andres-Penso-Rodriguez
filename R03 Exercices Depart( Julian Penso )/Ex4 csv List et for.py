@@ -33,16 +33,16 @@ ficher_a_lire = os.path.join("csvs","Ex4 Emplois Reseautique.csv" )
 
 # INSTRUCTIONS DÉTAILLÉES
 # Ouvrez en lecture le fichier "Ex4 Emplois Reseautique.csv", en utilisant l'encoding utf-8  
-with open("Ex4 Emplois Reseautique.csv" ,"r","utf-8") as csv_file:
+with open("Ex4 Emplois Reseautique.csv" ,"r",encoding="utf-8") as csv_file:
 # Lisez tout le contenu du fichier avec csv.reader() avec le delimiter=';'  
     lecteur = csv.reader(csv_file, delimiter=";")
 # Sautez la première ligne avec next() puisqu'elle ne contient que les entêtes de colonnes
-    next()
+    next(lecteur)
 # Dans votre boucle qui passera à travers les lignes
-for ligne in lecteur:
+    for ligne in lecteur:
 #      ATTENTION chaque ligne d'un fichier csv est une liste
 #      (on n'a pas de split à faire ensuite, le csv.reader le fait pour nous et nous retourne une liste des parties de la ligne
 #      Le diplôme sera l'élément à l'indice 4 
 #      Vérifiez sa valeur et si elle est 'Dec' ou 'Non déterminé' imprimez l'offre d'emploi
-    if ligne[4] == 'Dec' or ligne[4] == 'Non déterminé' : 
+        if ligne[4] == 'Dec' or ligne[4] == 'Non déterminé' : 
             print(ligne)
