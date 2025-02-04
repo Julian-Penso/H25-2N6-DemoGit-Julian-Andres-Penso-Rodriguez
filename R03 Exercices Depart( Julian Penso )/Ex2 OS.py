@@ -1,3 +1,4 @@
+
 import os
 os.chdir(os.path.dirname(__file__)) # cette ligne change le répertoire courant pour qu'il devienne celui où ce trouve le fichier actuel.
 
