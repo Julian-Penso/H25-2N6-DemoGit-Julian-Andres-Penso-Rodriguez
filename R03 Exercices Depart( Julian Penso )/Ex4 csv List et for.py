@@ -33,7 +33,7 @@ ficher_a_lire = os.path.join("csvs","Ex4 Emplois Reseautique.csv" )
 
 # INSTRUCTIONS DÉTAILLÉES
 # Ouvrez en lecture le fichier "Ex4 Emplois Reseautique.csv", en utilisant l'encoding utf-8  
-with open("Ex4 Emplois Reseautique.csv" ,"r",encoding="utf-8") as csv_file:
+with open(ficher_a_lire ,"r",encoding="utf-8") as csv_file:
 # Lisez tout le contenu du fichier avec csv.reader() avec le delimiter=';'  
     lecteur = csv.reader(csv_file, delimiter=";")
 # Sautez la première ligne avec next() puisqu'elle ne contient que les entêtes de colonnes
